@@ -155,3 +155,6 @@ exports.read = function readOTBM(__INFILE__) {
     return readNode(data.slice(4)).node;
 
 };
+
+const result = exports.read("./data/items.otb").children.reduce(function(map, data) { map[data.sid] = data.cid; return map; }, {});
+fs.writeFileSync('server-client-ids.json', JSON.stringify(result, null, 3));

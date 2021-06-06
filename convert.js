@@ -1,4 +1,4 @@
-const otb2json = require('../index');
+const otb2json = require('./index');
 const fs = require('fs');
 
 const file = otb2json.read('./data/items.otb');
